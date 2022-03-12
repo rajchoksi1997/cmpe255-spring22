@@ -1,0 +1,6 @@
+       engine_cylinders transmission_type      driven_wheels  number_of_doors market_category vehicle_size        vehicle_style  highway_mpg  city_mpg  popularity   msrp     msrp_pred
+2779                4.0         automatic   four_wheel_drive              4.0             NaN      compact  extended_cab_pickup           25        19        1385  26885  19203.120393
+3708                4.0         automatic    all_wheel_drive              4.0          luxury      midsize                sedan           29        22         617  54650  31891.816525
+4794                4.0            manual  front_wheel_drive              4.0       flex_fuel      compact                sedan           36        26        5657  16775  16295.103162
+10498               6.0         automatic  front_wheel_drive              4.0          luxury      midsize                sedan           34        21         204  42600  39663.642210
+1880                4.0         automatic  front_wheel_drive              2.0             NaN      compact          convertible           34        25         873  25995  17950.414942
