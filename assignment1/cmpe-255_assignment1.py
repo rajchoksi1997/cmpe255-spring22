@@ -47,14 +47,15 @@ y_train = y.sample(frac = p, random_state = 42)
 y_test = y.drop(y_train.index)
 
 model = Sequential()
-model.add(Dense(64, input_dim = len(X_train.iloc[0]), activation = 'relu'))
+model.add(tf.keras.layers.Normalization(input_shape=[len(X_train.iloc[0]),]))
+# model.add(Dense(64, input_dim = len(X_train.iloc[0]), activation = 'relu'))
 model.add(Dense(32, activation = 'relu'))
-model.add(Dense(8, activation = 'relu'))
-model.add(Dense(1, activation = 'linear'))
+model.add(Dense(16, activation = 'relu'))
+model.add(Dense(1))
 
-model.compile(loss='categorical_crossentropy', optimizer = "adam", metrics = 'mean_squared_error')
+model.compile(loss='mean_squared_error', optimizer = tf.keras.optimizers.Adam(0.001), metrics = 'mean_squared_error')
 
-history = model.fit(X_train, y_train, epochs = 20)
+history = model.fit(X_train, y_train, epochs = 30)
 
 y_pred = model.predict(X_test)
 y_pred_flat = y_pred.flatten()
@@ -68,7 +69,7 @@ location = 'Seattle, WA'
 def predict_q1(position, experience, location):
   years_at_company, bonus = 2, 10000
   base_salary, stockgrantvalue = 150000, 20000
-  year = 2023
+  year = 2022
   company = 'Amazon'
   
   tempComp = le_company.transform([company])[0]
